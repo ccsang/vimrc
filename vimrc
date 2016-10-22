@@ -73,6 +73,9 @@ set nobackup
 set noundofile
 set nowritebackup
 
+"set no belling 
+set visualbell
+set t_vb=
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vundle settings begin
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
