@@ -108,6 +108,8 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'Valloric/YouCompleteMe'
 " autocomplete
 Plugin 'ternjs/tern_for_vim' 
+" enhance status line
+Plugin 'vim-airline/vim-airline'
 call vundle#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vundle settings end
@@ -131,10 +133,29 @@ let g:syntastic_javascript_checkers = ['eslint']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " syntastic settings end
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" always show status line
+set laststatus=2
+
 colorscheme smyck
+
+let mapleader = ","
 " Run current file
 noremap <F9> :!node --harmony %<CR>
 " code formatter
 noremap <C-F> :Autoformat<CR>
 " NERDTree toggle
 noremap <F2> :NERDTreeToggle<CR>
+
+" enable tern keyboard shortcuts
+let g:tern_map_keys=1
+" display argument type hints when the cursor is left over a function
+let g:tern_show_argument_hints='on_hold'
+" <Leader> td   :TernDoc	Documentation under cursor
+" <Leader> tb	:TernDocBrowse	Browse documentation
+" <Leader> tt	:TernType	Type hints
+" <Leader> td	:TernDef	Jump to definition (yes, 'td' is duplicated)
+" <Leader> tpd	:TernDefPreview	Jump to definition inside preview
+" <Leader> tsd	:TernDefSplit	Definition in new split
+" <Leader> ttd	:TernDefTab	Definition in new tab
+" <Leader> tr	:TernRefs	All references under cursor
+" <Leader> tR	:TernRename	Rename variable
