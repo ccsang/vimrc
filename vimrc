@@ -104,6 +104,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'wavded/vim-stylus'
 " code format
 Plugin 'Chiel92/vim-autoformat'
+" youcompleteme
+Plugin 'Valloric/YouCompleteMe'
+" autocomplete
+Plugin 'ternjs/tern_for_vim' 
 call vundle#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vundle settings end
