@@ -73,9 +73,9 @@ set nobackup
 set noundofile
 set nowritebackup
 
-"set no belling 
-set visualbell
-set t_vb=
+"set no belling and flash
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vundle settings begin
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -132,6 +132,5 @@ colorscheme smyck
 noremap <F9> :!node --harmony %<CR>
 " code formatter
 noremap <C-F> :Autoformat<CR>
-
 " NERDTree toggle
 noremap <F2> :NERDTreeToggle<CR>
