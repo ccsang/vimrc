@@ -133,3 +133,5 @@ noremap <F9> :!node --harmony %<CR>
 " code formatter
 noremap <C-F> :Autoformat<CR>
 
+" NERDTree toggle
+noremap <F2> :NERDTreeToggle<CR>
