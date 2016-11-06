@@ -112,6 +112,8 @@ Plugin 'ternjs/tern_for_vim'
 Plugin 'vim-airline/vim-airline'
 " vue component hl
 Plugin 'posva/vim-vue'
+" jade hl and indent
+Plugin 'digitaltoad/vim-pug'
 call vundle#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vundle settings end
@@ -137,12 +139,16 @@ let g:syntastic_javascript_checkers = ['eslint']
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " always show status line
 set laststatus=2
+" show buffer tabs
+let g:airline#extensions#tabline#enabled = 1
 
 colorscheme smyck
 
 let mapleader = ","
 " Run current file
 noremap <F9> :!node --harmony %<CR>
+noremap <F10> :!babel-node %<CR>
+
 " code formatter
 noremap <C-F> :Autoformat<CR>
 " NERDTree toggle
