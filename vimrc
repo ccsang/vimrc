@@ -110,6 +110,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'ternjs/tern_for_vim' 
 " enhance status line
 Plugin 'vim-airline/vim-airline'
+" vue component hl
+Plugin 'posva/vim-vue'
 call vundle#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vundle settings end
