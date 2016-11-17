@@ -40,9 +40,25 @@ set fileencodings=utf-8,chinese,latin-1
 
 if has("win32")
     set fileencoding=chinese
+    set guifont=Consolas:h12
 else
     set fileencoding=utf-8
 endif
+
+if has('gui_running')
+    " 窗口启动最大化
+    autocmd GUIEnter * simalt~x 
+    " 隐藏菜单栏
+    set guioptions-=m
+    " 隐藏工具栏
+    set guioptions-=T
+    " 隐藏左侧滚动条
+    set guioptions-=L
+    " 隐藏右侧滚动条
+    set guioptions-=r
+    " 隐藏底部滚动条
+    set guioptions-=b
+endif 
 
 "解决菜单乱码
 source $VIMRUNTIME/delmenu.vim
