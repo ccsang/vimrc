@@ -110,17 +110,18 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'ternjs/tern_for_vim' 
 " enhance status line
 Plugin 'vim-airline/vim-airline'
-" vue component hl
-Plugin 'posva/vim-vue'
 " jade hl and indent
 Plugin 'digitaltoad/vim-pug'
+" html 5 hl
+Plugin 'othree/html5.vim'
+" vue component hl
+Plugin 'posva/vim-vue'
 call vundle#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vundle settings end
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable filetype detect, plugin, indent
 filetype plugin indent on
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " syntastic settings begin
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -141,6 +142,9 @@ let g:syntastic_javascript_checkers = ['eslint']
 set laststatus=2
 " show buffer tabs
 let g:airline#extensions#tabline#enabled = 1
+
+" Vue symtax highlighting
+autocmd BufNewFile,BufRead *.vue set ft=vue
 
 colorscheme smyck
 
