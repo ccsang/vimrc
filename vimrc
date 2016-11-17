@@ -1,10 +1,10 @@
-" ²»¼æÈİvi be iMproved
+" ä¸å…¼å®¹vi be iMproved
 set nocompatible
 
 " Set to auto read when a file is changed from the outside
 set autoread
 
-" ×Ô¶¯Éèµ±Ç°±à¼­µÄÎÄ¼şËùÔÚÄ¿Â¼Îªµ±Ç°¹¤×÷Â·¾¶
+" è‡ªåŠ¨è®¾å½“å‰ç¼–è¾‘çš„æ–‡ä»¶æ‰€åœ¨ç›®å½•ä¸ºå½“å‰å·¥ä½œè·¯å¾„
 set autochdir
 
 " Show current line and column
@@ -30,25 +30,41 @@ set showmatch
 
 " Enable syntax highlighting
 syntax enable
-" ÔÊĞíÓÃÖ¸¶¨Óï·¨¸ßÁÁÅäÉ«·½°¸Ìæ»»Ä¬ÈÏ·½°¸
+" å…è®¸ç”¨æŒ‡å®šè¯­æ³•é«˜äº®é…è‰²æ–¹æ¡ˆæ›¿æ¢é»˜è®¤æ–¹æ¡ˆ
 syntax on
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
-" gvim windows ±àÂëÉèÖÃ
+" gvim windows ç¼–ç è®¾ç½®
 set fileencodings=utf-8,chinese,latin-1
 
 if has("win32")
     set fileencoding=chinese
+    set guifont=Consolas:h12
 else
     set fileencoding=utf-8
 endif
 
-"½â¾ö²Ëµ¥ÂÒÂë
+if has('gui_running')
+    " çª—å£å¯åŠ¨æœ€å¤§åŒ–
+    autocmd GUIEnter * simalt~x 
+    " éšè—èœå•æ 
+    set guioptions-=m
+    " éšè—å·¥å…·æ 
+    set guioptions-=T
+    " éšè—å·¦ä¾§æ»šåŠ¨æ¡
+    set guioptions-=L
+    " éšè—å³ä¾§æ»šåŠ¨æ¡
+    set guioptions-=r
+    " éšè—åº•éƒ¨æ»šåŠ¨æ¡
+    set guioptions-=b
+endif 
+
+"è§£å†³èœå•ä¹±ç 
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
-"½â¾öconsoleÊä³öÂÒÂë
+"è§£å†³consoleè¾“å‡ºä¹±ç 
 language message zh_CN.utf-8
 
 " Use Unix as the standard file type
@@ -92,15 +108,15 @@ endif
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-" Óï·¨¼ì²é
+" è¯­æ³•æ£€æŸ¥
 Plugin 'scrooloose/syntastic'
-" ×¢ÊÍÖúÊÖ
+" æ³¨é‡ŠåŠ©æ‰‹
 Plugin 'scrooloose/nerdcommenter'
-" javascript Óï·¨¸ßÁÁ
+" javascript è¯­æ³•é«˜äº®
 Plugin 'pangloss/vim-javascript'
-" Ä¿Â¼Ê÷
+" ç›®å½•æ ‘
 Plugin 'scrooloose/nerdtree'
-" stylus Óï·¨¸ßÁÁ
+" stylus è¯­æ³•é«˜äº®
 Plugin 'wavded/vim-stylus'
 " code format
 Plugin 'Chiel92/vim-autoformat'
@@ -171,3 +187,9 @@ let g:tern_show_argument_hints='on_hold'
 " <Leader> ttd	:TernDefTab	Definition in new tab
 " <Leader> tr	:TernRefs	All references under cursor
 " <Leader> tR	:TernRename	Rename variable
+
+ "next buffer, prev buffer
+noremap <leader>bp :bp<CR> 
+noremap <leader>bn :bn<CR>
+noremap <C-PageUp>   :bp<CR>
+noremap <C-PageDown> :bn<CR>
